@@ -78,12 +78,17 @@ def move_resources(gen):
     """
     js_files = gen.get_files('js', extensions='js')
     css_files = gen.get_files('css', extensions='css')
+    json_files = gen.get_files('data', extensions='json')
 
     js_dest = os.path.join(gen.output_path, 'js')
     copy_resources(gen.path, js_dest, js_files)
 
+    json_dest = os.path.join(gen.output_path, 'data')
+    copy_resources(gen.path, json_dest, json_files)
+
     css_dest = os.path.join(gen.output_path, 'css')
     copy_resources(gen.path, css_dest, css_files)
+
 
 
 def register():
